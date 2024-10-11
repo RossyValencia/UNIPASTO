@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - UNIPASTO</title>
+    <link rel="stylesheet" href="cssUni2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="unipastoLogo.jpeg" alt="UNIPASTO Logo">
+        </div>
+        <h1>UNIPASTO</h1>
+        <p>Sigue tu pasión y alcanza tus metas con alegría!</p>
+    </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Uni2.html">Inicio</a></li>
+            <li><a href="UniPrivadas.html">Universidades Privadas</a></li>
+            <li><a href="UniPublicas.html">Universidades Públicas</a></li>
+            <li><a href="#">Zona de Interacción</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Bienvenidos a UNIPASTO, la página del futuro.</h2>
+        <div class="main-content">
+            <form onsubmit="return validateForm()">
+                <div class="login-box">
+                    <input type="text" id="nombre" placeholder="Nombre Completo*">
+                    <input type="email" id="email" placeholder="Correo Electrónico*">
+                    <input type="password" id="password" placeholder="Contraseña*">
+                    <input type="password" id="confirm-password" placeholder="Confirmar Contraseña*">
+                    <button type="submit">Registrarse</button>
+                </div>
+            </form>
+            <div class="image">
+                <img src="img.jpg" alt="Estudiantes">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 UNIPASTO. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function validateForm() {
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            // Validación del nombre
+            if (nombre.length < 3) {
+                alert("El nombre debe tener al menos 3 caracteres.");
+                return false;
+            }
+
+            // Validación del correo electrónico
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Por favor, introduce una dirección de correo válida.");
+                return false;
+            }
+
+            // Validación de la contraseña
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert("La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula, un número y un carácter especial.");
+                return false;
+            }
+
+            // Confirmar la contraseña
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

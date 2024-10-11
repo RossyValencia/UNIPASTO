@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - UNIPASTO</title>
+    <link rel="stylesheet" href="cssUni2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="unipastoLogo.jpeg" alt="UNIPASTO Logo">
+        </div>
+        <h1>UNIPASTO</h1>
+        <p>Sigue tu pasión y alcanza tus metas con alegría!</p>
+    </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Uni2.html">Inicio</a></li>
+            <li><a href="UniPrivadas.html">Universidades Privadas</a></li>
+            <li><a href="UniPublicas.html">Universidades Públicas</a></li>
+            <li><a href="#">Zona de Interacción</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Bienvenidos a UNIPASTO, la página del futuro.</h2>
+        <div class="main-content">
+            <div class="login-box">
+                <input type="text" placeholder="Correo Electrónico">
+                <input type="password" placeholder="Contraseña">
+                <button>Ingresar</button>
+                <a href="#">¿Recuperar contraseña?</a>
+            </div>
+            <div class="image">
+                <img src="img.jpg" alt="Estudiantes">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 UNIPASTO. Todos los derechos reservados.</p>
+            <nav>
+                <ul>
+                    <li><a href="privacy.html">Política de Privacidad</a></li>
+                    <li><a href="terms.html">Términos de Uso</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let valid = true;
+            let message = "";
+    
+            if (!emailPattern.test(email)) {
+                message += "Por favor, ingresa un correo electrónico válido.\n";
+                valid = false;
+            }
+    
+            if (password.length < 6) {
+                message += "La contraseña debe tener al menos 6 caracteres.\n";
+                valid = false;
+            }
+    
+            if (!valid) {
+                alert(message);
+            }
+    
+            return valid;
+        }
+    </script>
+</body>
+</html>
